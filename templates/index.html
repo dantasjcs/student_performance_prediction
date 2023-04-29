@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static\styles.css" type="text/css">
+    <title>ML APP</title>
+</head>
+<body>
+    <div class="form_container">
+        <h3>Predição de aprovação de estudante</h3>
+        <form action="/" method="POST">
+            <label for="parent">Nível parental de educação: </label>
+            <select name="parent" id="parent">
+                <option value="0">Associate's degree</option>
+                <option value="1">Bachalor degree</option>
+                <option value="2">High school</option>
+                <option value="3">Some High School</option>
+                <option value="4">Master's degree</option>
+              </select>
+            <label for="race">Raça: </label>
+                <select name="race" id="race">
+                    <option value="0">A</option>
+                    <option value="1">B</option>
+                    <option value="2">C</option>
+                    <option value="3">D</option>
+                    <option value="4">E</option>
+                  </select>
+            <label for="gender">Gênero: </label>
+            <select name="gender" id="gender">
+                <option value="0">Feminino</option>
+                <option value="1">Masculino</option>
+            </select>
+            <label for="lanche">Lanche:  </label>
+            <select name="lanche" id="lanche">
+                <option value="0">Gratuito</option>
+                <option value="1">Normal</option>
+            </select>
+            <label for="test_prep">Curso de preparação: </label>
+            <select name="test_prep" id="test_prep">
+                <option value="0">Sim</option>
+                <option value="1">Não</option>
+            </select>
+            <label for="math_score">Nota em Matemática: </label>
+            <input name="math_score" type="number" id="math_score" min="0" max="100" required>
+            </select>
+            <label for="wrt_score">Nota em Leitura: </label>
+            <input name="wrt_score" type="number" id="wrt_score" min="0" max="100" required>
+            </select>
+        <button type="submit">Enviar</button>
+        </form>
+        {% if result == 1 %}
+            <div class="resultado aprovado">O aluno deve ser aprovado com {{proba}}% de certeza.</div>
+        {% elif  result == 0 %}
+            <div class="resultado reprovado">O aluno deve ser reprovado com {{proba}}% de certeza.</div>
+        {% endif %}
+    </div>
+    
+</body>
+</html>
